@@ -1,0 +1,41 @@
+/* 
+This schema represents the food itself. Example, a hamburguer with letuce, tomato an mayo
+In this case, the name and description, refers to the hamburger itself. 
+
+The list of ingredientes will be: Bread, hamburger, letuce, tomato and mayo.
+For this ingredients, the bread and the hamburger are not remobables (check ingredient schema). Otherwise, the 
+letuce, tomato and mayou could be modified (removed or add extra)
+
+For the extraIngredients, cold be cheese and beacon. Where could be added and needs to calculate the extra cost
+*/
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "ingredients": {
+      "type": "array",
+      "items": {
+        "$ref": "ingredient-schema.json#/definitions/ingredient"
+      }
+    },
+    "extraIngredients": {
+      "type": "array",
+      "items": {
+        "$ref": "ingredient-schema.json#/definitions/ingredient"
+      }
+    },
+    "addons": {
+      "type": "array",
+      "items": {
+        "$ref": "addon-schema.json#/definitions/addon"
+      }
+    }
+  },
+  "required": ["name"]
+}

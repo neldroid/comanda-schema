@@ -1,0 +1,37 @@
+/*
+This is the schema of just one single ingredient. Contains the properites to operate in every food
+*/
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    // Indicates a default quanity of this ingredient for the food
+    "defaultValue": {
+      "type": "number",
+      "minimum": 0
+    },
+    "quantity": {
+      "type": "number",
+      "minimum": 0
+    },
+    "individualCost": {
+      "type": "number",
+      "minimum": 0
+    },
+    "removable": {
+      "type": "boolean"
+    },
+    "maximum": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "required": ["name", "quantity", "individualCost", "removable", "maximum"]
+}

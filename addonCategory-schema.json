@@ -1,0 +1,20 @@
+/*
+This schema represents a group of addons. This gives me the possibility to group addons under one 
+single category
+*/
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "categoryTitle": {
+      "type": "string"
+    },
+    "addons": {
+      "type": "array",
+      "items": {
+        "$ref": "addon-schema.json#/definitions/addon"
+      }
+  },
+  "required": ["categoryTitle", "addons"]
+}
